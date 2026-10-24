@@ -1,0 +1,6 @@
+requirement_id,requirement,test_id,test_status,evidence,decision
+R_CREATE,"заявка сохраняется и читается",T01,passed,"synthetic-log-E01 (учебный маркер)","принято как подтвержденное внутри кейса"
+R_ACCESS,"чужая заявка недоступна",T02,passed,"synthetic-log-E02 (учебный маркер)","принято как подтвержденное внутри кейса"
+R_IDEMPOTENCY,"повтор не создает дубль",T03,passed,"synthetic-log-E03 (учебный маркер)","принято как подтвержденное внутри кейса"
+R_RESTORE,"RTO не более 20 минут и RPO не более 15 минут",T04,blocked,"restore-target-unavailable","заблокировано: не хватает restore-target; организовать проверку должен test_owner (student_tester) с technical_executor"
+R_PERFORMANCE,"успех не ниже 99 процентов и p95 не выше 800 мс",T05,not_run,"нет результата","не проведено: метод — 20 одновременных операторов на 1000 заявок, p95 = ближайший ранг ceil(0.95*n) по всем длительностям попыток (ошибки тоже в выборке); критерий >=99% и <=800 мс; статус not_run сохраняется"
